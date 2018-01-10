@@ -27,8 +27,8 @@
     </div>
 
     <div class="form-row">
-        <label for="node-input-emojiIcon"><i class="fa fa-smile-o"></i> Emoji Icon</label>
-        <input type="text" id="node-input-emojiIcon" placeholder=":emojiIcon:" style=" vertical-align: top;">
+        <label for="node-input-iconURL"><i class="fa fa-smile-o"></i> User Icon URL</label>
+        <input type="text" id="node-input-iconURL" placeholder="iconURL" style=" vertical-align: top;">
     </div>
 
     <div class="form-row">
@@ -46,7 +46,7 @@
    <p>Sends the <b>msg.payload</b> to Matter Most.</p>
    <p>Simple way to post to a Matter Most channel.</p>
    <p>You can optionally override the destination channel if required - either in the edit dialogue or by setting <b>msg.channel</b>.</p>
-   <p>You can also create <a href="https://docs.mattermost.com/developer/message-attachments.html" target="_new">Matter Most attachments</a> by adding a <b>msg.attachments</b> property that must be an array.</p>
+   <p>You can also create <a href="https://docs.mattermost.com/developer/message-attachments.html" target="_new">Matter Most attachments</a> by adding a <b>msg.attachments</b> property that must be an array. Then leave msg.text blank or unset it since be becomes the payload</p>
 </script>
 
 <script type="text/javascript">
@@ -56,11 +56,11 @@
             name: {value:""},
             channelURL: {value:"", required:true},
             username: {value:""},
-            emojiIcon: {value:""},
+            iconURL: {value:""},
             channel: {value:""}
         },
-        color:"#4C9689",
-        icon: "hash.png",
+        color:"#2D70C0",
+        icon: "mattermost.png",
         align: "right",
         inputs:1,
         outputs:0,

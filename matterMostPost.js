@@ -28,21 +28,23 @@ module.exports = function(RED) {
 
         this.channelURL = n.channelURL;
         this.username = n.username || "";
-        this.emojiIcon = n.emojiIcon || "";
+        this.iconURL = n.iconURL || "";
         this.channel = n.channel || "";
+        this.text = n.text || "";
         var node = this;
 
         this.on('input', function (msg) {
             var channelURL = node.channelURL || msg.channelURL;
             var username = node.username || msg.username;
-            var emojiIcon = node.emojiIcon || msg.emojiIcon;
+            var icon_url = node.iconURL || msg.iconURL;
             var channel = node.channel || msg.channel;
+            var text = node.text || msg.payload;
 
-            var data = {
-                "text": msg.payload,
-                "username": username
-            };
+            var data = {};
+            if (text) { data.text = text; }
+            if (username) { data.username = username; }
             if (channel) { data.channel = channel; }
+            if (icon_url) { data.icon_url = icon_url; }
             if (msg.attachments) { data.attachments = msg.attachments; }
             if (matterMostDebug) { node.log(JSON.stringify(data)); }
             try {

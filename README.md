@@ -1,4 +1,4 @@
-node-red-contrib-slack
+node-red-contrib-mattermost
 ========================
 
 A <a href="http://nodered.org" target="_new">Node-RED</a> node to post messages to  <a href="http://mattermost.com" target="_new">custom mattermost setup</a>.
@@ -29,9 +29,11 @@ All possible Emoji icons can be found at <i><a href="http://emoji-cheat-sheet.co
 ### Destination channel
 You can optionally override the destination channel if required - either in the edit dialogue or by setting <b>msg.channel</b>.
 ### Attachments
-You can also create <a href="https://api.slack.com/docs/attachments" target="_new">Slack attachments</a> by adding a <b>msg.attachments</b> property that must be an array.
+You can also create <a href="https://docs.mattermost.com/developer/message-attachments.html" target="_new">Matter Most attachments</a> by adding a <b>msg.attachments</b> property that must be an array. Unset the payload to make it even smaller.
 
-For more information see <i><a href="https://api.slack.com/incoming-webhooks" target="_new">Slack Incoming Webhooks</a></i>.
+For more information see <i><a href="https://docs.mattermost.com/developer/webhooks-incoming.html" target="_new">Matter Most Incoming Webhooks</a></i>.
 
-## Slack Outgoing Webhook
-Should be pretty compatible, but still need to work on the development
+## Matter Most Outgoing Webhook
+This is the initial fork of <i><a href="https://github.com/yayadrian/node-red-slack" target="_new">yayadrian node-red-slack</a></i>.
+
+it should properly adapt to mattermost, and pass the icon too.
