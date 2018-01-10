@@ -23,9 +23,9 @@ Expects a <b>msg.payload</b> with a string that will be posted to the channel.
 This can be found on the Incoming WebHooks for the channel of your choice.
 ### Username
 This is the name that will appear above each post to the channel
-### Emoji Icon
+### Icon Url
 This is the emoji that will be dispalyed next to each of the messages in the channel.
-All possible Emoji icons can be found at <i><a href="http://emoji-cheat-sheet.com" target="_new">Emoji Cheat Sheet</a></i>
+this can be a url of your choice, but it must be a full url.
 ### Destination channel
 You can optionally override the destination channel if required - either in the edit dialogue or by setting <b>msg.channel</b>.
 ### Attachments

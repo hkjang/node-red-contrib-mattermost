@@ -20,7 +20,7 @@
       "matterMost": "matterMostPost.js"
     }
   },
-  "author": "Drew Matthews",
+  "author": "Drew Matthews <me@drew.beer>",
   "license": "MIT",
   "dependencies": {
     "request": "^2.51.0"
