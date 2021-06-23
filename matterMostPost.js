@@ -14,12 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  **/
+var axios = require('axios');
 
 module.exports = function(RED) {
     "use strict";
-
-    var request = require('request');
-
     // set this to true to spam your console with stuff.
     var matterMostDebug = true;
 
@@ -39,7 +37,8 @@ module.exports = function(RED) {
             var icon_url = node.iconURL || msg.iconURL;
             var channel = node.channel || msg.channel;
             var text = node.text || msg.payload;
-
+            node.options = {};
+            node.options.headers = {};
             var data = {};
             if (text) { data.text = text; }
             if (username) { data.username = username; }
@@ -48,17 +47,20 @@ module.exports = function(RED) {
             if (msg.attachments) { data.attachments = msg.attachments; }
             if (matterMostDebug) { node.log(JSON.stringify(data)); }
             try {
-                request({
-                    method: 'POST',
-                    uri: channelURL,
-                    body: JSON.stringify(data)
+                axios.post(channelURL, data, node.options)
+                    .then(function (response){
+                        msg.payload = response.data;
+                        node.send(msg);
+                    }).catch(function (err){
+                    msg.payload = err;
+                    node.send(msg);
                 });
             }
             catch (err) {
-                console.trace();
-                node.log(err,msg);
+                msg.payload = err;
+                node.send(msg);
             }
         });
     }
-    RED.nodes.registerType("matterMost", matterMostOut);
+    RED.nodes.registerType("matterMostAxios", matterMostOut);
 };

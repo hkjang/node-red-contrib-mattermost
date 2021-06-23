@@ -1,4 +1,4 @@
-node-red-contrib-mattermost
+node-red-contrib-mattermost-incoming
 ========================
 
 A <a href="http://nodered.org" target="_new">Node-RED</a> node to post messages to  <a href="http://mattermost.com" target="_new">custom mattermost setup</a>.
@@ -8,7 +8,7 @@ Install
 
 Run the following command in the root directory of your Node-RED install:
 
-    npm install node-red-contrib-matterMost
+    npm install node-red-contrib-mattermost-incoming
 
 
 Usage

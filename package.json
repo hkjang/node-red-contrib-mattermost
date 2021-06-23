@@ -1,6 +1,6 @@
 {
-  "name": "node-red-contrib-mattermost",
-  "version": "0.0.3",
+  "name": "node-red-contrib-mattermost-incoming",
+  "version": "1.0.0",
   "description": "A node-red module to post to your mattermost server",
   "main": "matterMostPost.js",
   "scripts": {
@@ -8,11 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/drewbeer/node-red-mattermost.git"
+    "url": "git://github.com/hkjang/node-red-contrib-mattermost-incoming.git"
   },
   "keywords": [
     "node-red",
     "mattermost",
+    "slack",
+    "axios",
     "post"
   ],
   "node-red": {
@@ -20,9 +22,9 @@
       "matterMost": "matterMostPost.js"
     }
   },
-  "author": "Drew Matthews <me@drew.beer>",
+  "author": "hkjang <gagagiga@naver.com>",
   "license": "MIT",
   "dependencies": {
-    "request": "^2.51.0"
+    "axios": "^0.21.1"
   }
 }
