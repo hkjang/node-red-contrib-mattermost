@@ -62,5 +62,5 @@ module.exports = function(RED) {
             }
         });
     }
-    RED.nodes.registerType("matterMostAxios", matterMostOut);
+    RED.nodes.registerType("MatterMostIncoming", matterMostOut);
 };

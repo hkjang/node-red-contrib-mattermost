@@ -15,7 +15,7 @@
   limitations under the License.
 -->
 
-<script type="text/x-red" data-template-name="matterMostAxios">
+<script type="text/x-red" data-template-name="MatterMostIncoming">
     <div class="form-row">
         <label for="node-input-channelURL"><i class="fa fa-slack"></i> WebHook URL</label>
         <input type="text" id="node-input-channelURL" placeholder="channelURL" style=" vertical-align: top;">
@@ -42,7 +42,7 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="matterMostAxios">
+<script type="text/x-red" data-help-name="MatterMostIncoming">
    <p>Sends the <b>msg.payload</b> to Matter Most.</p>
    <p>Simple way to post to a Matter Most channel.</p>
    <p>You can optionally override the destination channel if required - either in the edit dialogue or by setting <b>msg.channel</b>.</p>
@@ -50,7 +50,7 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('matterMostAxios',{
+    RED.nodes.registerType('MatterMostIncoming',{
         category: 'social',
         defaults: {
             name: {value:""},
